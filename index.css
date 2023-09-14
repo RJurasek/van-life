@@ -250,6 +250,7 @@ header a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2em;
 }
 
 .van-detail-container{
