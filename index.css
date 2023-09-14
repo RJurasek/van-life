@@ -69,7 +69,7 @@ header a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 350px;
+    min-height: 85%;
     color: white;
     padding: 45px 23px;
     display: flex;
@@ -115,6 +115,7 @@ header a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1.5em;
 }
 
 .about-hero-image {
@@ -207,6 +208,20 @@ header a:hover {
     border-radius: 5px;
 }
 
+/* FOOTER */
+
+footer{
+    padding: 1em;
+    background-color: #252525;
+    color: #AAAAAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75em;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
 
 @media(min-width: 800px){
     .van-list{
