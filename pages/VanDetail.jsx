@@ -32,7 +32,11 @@ export default function VanDetail(){
                         </div>
                     </div>
                 </div>)
-            : <h2>Loading...</h2>
+            : (
+                <div className='loading-wrapper'>
+                    <h2 className='loading-text'>Loading...</h2>
+                </div>
+            )
             }
         </>
     )

@@ -36,7 +36,12 @@ export default function Vans(){
                 <button className='clear-filter-btn'>Clear filters</button>
             </div>
             <div className='van-list'>
-                {vanElements}
+                {vans.length > 1 ? vanElements
+                : (
+                    <div className='loading-wrapper'>
+                        <h2 className='loading-text'>Loading...</h2>
+                    </div>
+                )}
             </div>
         </div>
     )

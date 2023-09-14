@@ -282,6 +282,13 @@ header a:hover {
     cursor: pointer;
 }
 
+.loading-wrapper{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* FOOTER */
 
 footer{
