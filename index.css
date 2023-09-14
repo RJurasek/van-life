@@ -72,6 +72,10 @@ header a:hover {
     min-height: 350px;
     color: white;
     padding: 45px 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-container h1 {
@@ -98,6 +102,7 @@ header a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: transform .1s ease-in-out;
+    max-width: 850px;
 }
 
 .home-container a:hover {
@@ -106,14 +111,22 @@ header a:hover {
 
 
 /*** ABOUT PAGE ***/
+.about-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-hero-image {
-    max-width: 100%;
+    width: 100%;
+    max-width: 850px;
 }
 
 .about-page-content {
     padding-inline: 23px;
     color: #161616;
     margin-bottom: 55px;
+    max-width: 900px;
 }
 
 .about-page-content h1 {
@@ -151,7 +164,10 @@ header a:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5em;
     padding: 1.5em;
+    margin: auto;
+    max-width: 700px;
 }
+
 
 .price{
     font-weight: bold;
@@ -189,4 +205,12 @@ header a:hover {
 .van img{
     max-width: 100%;
     border-radius: 5px;
+}
+
+
+@media(min-width: 800px){
+    .van-list{
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1000px;
+    }
 }
