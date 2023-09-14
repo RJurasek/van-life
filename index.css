@@ -160,6 +160,12 @@ header a:hover {
 
 /* VAN PAGE */
 
+.van-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .van-list{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -206,6 +212,29 @@ header a:hover {
 .van img{
     max-width: 100%;
     border-radius: 5px;
+}
+
+.filter-btn{
+    padding: .5em .75em;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-filter-btn{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.filter-btn-container{
+    display: flex;
+    gap: 1em;
 }
 
 /* FOOTER */
