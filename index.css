@@ -181,7 +181,7 @@ header a:hover {
     font-size: 1.125em;
 }
 
-.van div{
+.van-tile div{
     display: flex;
     justify-content: space-between;
 }
@@ -209,9 +209,14 @@ header a:hover {
     background-color: #E17654;
 }
 
-.van img{
+.van-tile img{
     max-width: 100%;
     border-radius: 5px;
+}
+
+.van-tile a{
+    text-decoration: none;
+    color: #161616;
 }
 
 .filter-btn{
@@ -235,6 +240,46 @@ header a:hover {
 .filter-btn-container{
     display: flex;
     gap: 1em;
+}
+
+/* VAN DETAIL PAGE */
+
+.van-detail-page{
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.van-detail-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.van-detail-container a{
+    color: #201F1D;
+    text-underline-offset: .15em;
+}
+
+.van-detail-description-container{
+    max-width: 600px;
+}
+
+.van-detail-container img{
+    width: 100%;
+    max-width: 600px;
+}
+
+.cta-btn{
+    background-color: #FF8C38;
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
 }
 
 /* FOOTER */
