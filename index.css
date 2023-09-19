@@ -18,14 +18,14 @@ body {
   scrollbar-width: none;
 }
 
-#root{
-    min-height: 100vh;
-    position: relative;
+main{
+    
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
+#root{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -80,7 +80,6 @@ nav a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 85%;
     color: white;
     padding: 45px 23px;
     display: flex;
@@ -295,7 +294,6 @@ nav a:hover {
 }
 
 .loading-wrapper{
-    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -318,9 +316,9 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     font-size: .75em;
     width: 100%;
+    margin-top: auto;
 }
 
 .active-link{
