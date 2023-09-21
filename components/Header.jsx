@@ -3,6 +3,12 @@ import {Link, NavLink} from 'react-router-dom'
 
 export default function Header(){
 
+    const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
+
+    const toggleHamburger = () => {
+        setHamburgerOpen(!hamburgerOpen)
+    }
+
     return (
         <header>
             <Link className="site-logo" to="/">#VanLife</Link>

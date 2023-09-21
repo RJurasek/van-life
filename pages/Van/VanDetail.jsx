@@ -1,6 +1,5 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 export default function VanDetail(){
@@ -19,8 +18,8 @@ export default function VanDetail(){
             {van ? (
                 <div className='van-detail-page'>
                     <div className='van-detail-container'>
-                        <Link to='/vans'>
-                            <p>Back to all vans</p>
+                        <Link className='back-to-vans-link' to='..' relative='path'>
+                            Back to all vans
                         </Link>
                         <img src={van.imageUrl} />
                         <div className='van-detail-description-container'>
