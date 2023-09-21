@@ -5,18 +5,21 @@ export default function Header(){
 
     const [hamburgerOpen, setHamburgerOpen] = React.useState(false)
 
-    const toggleHamburger = () => {
-        setHamburgerOpen(!hamburgerOpen)
+    const activeStyles = {
+        fontWeight: "bold",
+        textDecoration: "underline",
+        color: "#161616",
+        textUnderlineOffset: ".2em",
     }
 
     return (
         <header>
-            <Link className="site-logo" to="/">#VanLife</Link>
+            <Link className="logo" to="/">#VanLife</Link>
             <nav>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/host">Host</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/about">About</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/vans">Vans</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyles : null} to="/host">Host</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyles : null} to="/about">About</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyles : null} to="/vans">Vans</NavLink>
             </nav>
-      </header>
+        </header>
     )
 }
