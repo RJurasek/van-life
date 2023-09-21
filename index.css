@@ -90,6 +90,7 @@ p{
     text-decoration: underline;
     text-underline-offset: .2em;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .filter-btn-container{
