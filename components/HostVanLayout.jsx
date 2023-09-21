@@ -31,7 +31,7 @@ export default function HostVanLayout(){
                     <div className='host-van-detail-top'>
                         <img className='host-van-details-image' src={currentVan.imageUrl} />
                         <div className='host-van-description'>
-                            <span className={`${currentVan.type} van-type`}>{currentVan.type}</span>
+                            <span className={`${currentVan.type} van-type`}>{currentVan.type.charAt(0).toUpperCase() + currentVan.type.slice(1)}</span>
                             <h2>{currentVan.name}</h2>
                             <p><span className='price'>${currentVan.price}</span>/day</p>
                         </div>

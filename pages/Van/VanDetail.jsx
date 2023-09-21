@@ -23,7 +23,7 @@ export default function VanDetail(){
                         </Link>
                         <img className='van-image' src={van.imageUrl} />
                         <div className='van-description-container'>
-                            <span className={`van-type ${van.type}`}>{van.type}</span>
+                            <span className={`van-type ${van.type}`}>{van.type.charAt(0).toUpperCase() + van.type.slice(1)}</span>
                             <h1>{van.name}</h1>
                             <p><span className='price'>${van.price}</span>/day</p>
                             <p>{van.description}</p>
