@@ -15,11 +15,11 @@ export default function Vans(){
             <div className='van-tile' key={van.id}>
                 <Link to={`/vans/${van.id}`}>
                     <img className='van-image' src={van.imageUrl} />
-                    <div>
+                    <div className='van-tile-description'>
                         <h3>{van.name}</h3>
                         <p><span className='price'>${van.price}</span><br/>/day</p>
                     </div>
-                    <p className={`${van.type} van-type`}>{van.type}</p>
+                    <span className={`${van.type} van-type`}>{van.type}</span>
                 </Link>
             </div>
             
@@ -35,14 +35,16 @@ export default function Vans(){
                 <button className='filter-btn'>Rugged</button>
                 <button className='clear-filter-btn'>Clear filters</button>
             </div>
-            <div className='van-list'>
-                {vans.length > 1 ? vanElements
-                : (
-                    <div className='loading-wrapper'>
-                        <h2 className='loading-text'>Loading...</h2>
-                    </div>
-                )}
-            </div>
+            {vans.length > 1 ? (
+                <div className='van-list'>
+                    {vanElements}
+                </div>
+            )
+            : (
+                <div className='loading-wrapper'>
+                    <h2 className='loading-text'>Loading...</h2>
+                </div>
+            )}
         </section>
     )
 }

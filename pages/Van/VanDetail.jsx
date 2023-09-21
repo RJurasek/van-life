@@ -16,21 +16,21 @@ export default function VanDetail(){
     return (
         <>
             {van ? (
-                <div className='van-detail-page'>
+                <section className='page-container'>
                     <div className='van-detail-container'>
-                        <Link className='back-to-vans-link' to='..' relative='path'>
+                        <Link className='back-btn' to='..' relative='path'>
                             Back to all vans
                         </Link>
-                        <img src={van.imageUrl} />
-                        <div className='van-detail-description-container'>
+                        <img className='van-image' src={van.imageUrl} />
+                        <div className='van-description-container'>
                             <span className={`van-type ${van.type}`}>{van.type}</span>
                             <h1>{van.name}</h1>
                             <p><span className='price'>${van.price}</span>/day</p>
                             <p>{van.description}</p>
-                            <button className='cta-btn'>Rent this van</button>
+                            <button className='cta-btn orange-btn'>Rent this van</button>
                         </div>
                     </div>
-                </div>)
+                </section>)
             : (
                 <div className='loading-wrapper'>
                     <h2 className='loading-text'>Loading...</h2>

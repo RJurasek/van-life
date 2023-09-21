@@ -29,10 +29,23 @@ body {
 
 .page-container{
     padding: 1em;
+    margin-bottom: 1em;
+}
+
+h2, h3{
+    margin: 0;
 }
 
 p{
+    margin: 0;
     line-height: 1.5;
+}
+
+.loading-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 /* BUTTONS */
@@ -46,6 +59,7 @@ p{
     padding: .5em;
     border-radius: 8px;
     cursor: pointer;
+    border: none;
 }
 
 .short{
@@ -55,6 +69,7 @@ p{
 
 .orange-btn{
     background: #FF8C38;
+    border: 1px solid #4d4d4d;
 }
 
 .black-btn{
@@ -62,8 +77,29 @@ p{
 }
 
 .filter-btn{
-    padding: .75em;
+    padding: .5em;
     background: #FFEAD0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear-filter-btn{
+    border: none;
+    background: none;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+    cursor: pointer;
+}
+
+.filter-btn-container{
+    display: flex;
+    gap: .5em
+}
+
+.back-btn{
+    color: #201F1D;
+    text-underline-offset: .15em;
 }
 
 /* Header */
@@ -114,8 +150,9 @@ footer{
     justify-content: center;
     background: #252525;
     color: #AAAAAA;
-    padding: .75em;
+    padding: 1rem;
     margin-top: auto;
+    font-size: .75rem;
 }
 
 /* Home Page */
@@ -125,17 +162,20 @@ footer{
     background-size: cover;
     color: white;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .hero-container > h1, .hero-container > p {
-    text-shadow: 3px 3px 3px black;
+    text-shadow: 0 0 3px black;
 }
 
 
 
 /* ABOUT */
 
-.about-hero-img{
+.about-hero-image{
     width: 100%;
 }
 
@@ -144,6 +184,9 @@ footer{
 }
 
 .about-page-cta{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     background-color: #FFCC8D;
     padding: 1em;
     border-radius: 5px;
@@ -153,13 +196,167 @@ footer{
 
 /* VANS PAGE */
 
+.van-image{
+    width: 100%;
+    border-radius: 5px;
+}
+
 .van-list{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1em;
+    grid-row-gap: 1.5em;
     margin-top: 1em;
+}
+
+.van-tile-description{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .5em;
+    margin-bottom: .5em;   
+}
+
+.price{
+    font-weight: bold;
+}
+
+.van-type{
+    color: #FFEAD0;
+    padding: .5em .75em;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.Rugged{
+    background-color: #115E59;
+}
+
+.Simple{
+    background-color: #E17654;
+}
+
+.Luxury{
+    background-color: #161616;
+}
+
+.van-tile a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.van-tile h3{
+    margin: 0;
+}
+
+.van-tile p{
+    margin: 0;
 }
 
 .van-image{
     width: 100%;
+}
+
+
+/* VAN DETAILS PAGE */
+
+.van-detail-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.van-description-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.van-description-container h1,
+.van-description-container p{
+    margin: 0;
+}
+
+/* HOST */
+
+.host-navbar{
+    display: flex;
+    padding: 1em;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.host-vans{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.host-vans a{
+    text-decoration: none;
+}
+
+.host-van-card{
+    display: flex;
+    padding: 1em;
+    background-color: #ffffff;
+    gap: 1em;
+    border-radius: 5px;
+}
+
+.host-van-card-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
+}
+
+.host-van-card h3,
+.host-van-card p{
+    margin: 0;
+}
+
+.host-van-card h3{
+    color: #161616;
+}
+
+.host-van-card p{
+    color: #4d4d4d;
+    font-weight: 500;
+}
+
+.host-van-image{
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #161616;
+}
+
+/* HOST VAN DETAIL */
+
+.host-van-detail-container{
+    background-color: #ffffff;
+    padding: .75em;
+    margin-top: 1em;
+}
+
+.host-van-detail-top{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.host-van-description{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.host-van-description h2{
+    font-size: 1.35em;
+}
+
+.host-van-details-image{
+    width: 40%;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #161616;
 }
