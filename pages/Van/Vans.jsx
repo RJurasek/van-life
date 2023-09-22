@@ -3,21 +3,39 @@ import {Link, useSearchParams} from 'react-router-dom'
 
 export default function Vans(){
     const [vans, setVans] = React.useState([])
+    const [clicked, setClicked] = React.useState("")
     const [searchParams, setSearchParams] = useSearchParams()
+
     const typeFilter = searchParams.getAll("type")
-    console.log(typeFilter)
 
     function handleFilterChange(key, value){
+        if(value === null){
+            setClicked("")
+        }
         setSearchParams(prevParams => {
             if(value === null){
                 prevParams.delete(key)
             } else {
-                prevParams.append(key, value)
+                if(prevParams.getAll(key).includes(value)){
+                    prevParams.delete(key)
+                } else {
+                prevParams.set(key, value)
+                }
             }
             return prevParams
         })
     }
-
+    
+    function toggleClicked(value){
+        setClicked(prevState => {
+            if(prevState === value){
+                return ""
+            } else {
+                return value
+            }
+        })
+    }
+    console.log(clicked)
     React.useEffect(() => {
         fetch("/api/vans")
             .then(res => res.json())
@@ -46,10 +64,30 @@ export default function Vans(){
         <section className='page-container'>
             <h1>Explore our van options</h1>
             <div className='filter-btn-container'>
-                <button onClick={() => handleFilterChange("type", "simple")} className='filter-btn'>Simple</button>
-                <button onClick={() => handleFilterChange("type", "luxury")} className='filter-btn'>Luxury</button>
-                <button onClick={() => handleFilterChange("type", "rugged")} className='filter-btn'>Rugged</button>
-                <button onClick={() => handleFilterChange("type", null)} className='clear-filter-btn'>Clear filters</button>
+                <button 
+                    onClick={() => handleFilterChange("type", "simple")}
+                    style={ typeFilter.includes("simple") ? {background: "#E17654", color: "#FFEAD0"} : null} 
+                    className='filter-btn'>
+                        Simple
+                </button>
+                <button 
+                    onClick={() => handleFilterChange("type", "luxury")}
+                    style={ typeFilter.includes("luxury") ? {background: "#161616", color: "#FFEAD0"} : null} 
+                    className='filter-btn'>
+                        Luxury
+                </button>
+                <button 
+                    onClick={() => handleFilterChange("type", "rugged")}
+                    style={ typeFilter.includes("rugged") ? {background: "#115E59", color: "#FFEAD0"} : null} 
+                    className='filter-btn'>
+                        Rugged
+                </button>
+
+                {typeFilter.length > 0 && <button 
+                    onClick={() => handleFilterChange("type", null)} 
+                    className='clear-filter-btn'>
+                        Clear filters
+                </button>}
             </div>
             {vans.length > 1 ? (
                 <div className='van-list'>
