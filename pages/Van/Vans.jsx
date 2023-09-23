@@ -3,15 +3,11 @@ import {Link, useSearchParams} from 'react-router-dom'
 
 export default function Vans(){
     const [vans, setVans] = React.useState([])
-    const [clicked, setClicked] = React.useState("")
     const [searchParams, setSearchParams] = useSearchParams()
 
     const typeFilter = searchParams.getAll("type")
 
     function handleFilterChange(key, value){
-        if(value === null){
-            setClicked("")
-        }
         setSearchParams(prevParams => {
             if(value === null){
                 prevParams.delete(key)
@@ -26,16 +22,6 @@ export default function Vans(){
         })
     }
     
-    function toggleClicked(value){
-        setClicked(prevState => {
-            if(prevState === value){
-                return ""
-            } else {
-                return value
-            }
-        })
-    }
-    console.log(clicked)
     React.useEffect(() => {
         fetch("/api/vans")
             .then(res => res.json())
@@ -47,7 +33,7 @@ export default function Vans(){
    const vanElements = displayedVans
         .map((van) => (
             <div className='van-tile' key={van.id}>
-                <Link to={`${van.id}`}>
+                <Link to={`${van.id}`} state={{search: `${searchParams.toString()}`, type: typeFilter}}>
                     <img className='van-image' src={van.imageUrl} />
                     <div className='van-tile-description'>
                         <h3>{van.name}</h3>

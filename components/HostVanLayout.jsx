@@ -24,7 +24,7 @@ export default function HostVanLayout(){
         <>
         {currentVan ? (
             <section className='page-container'>
-                <Link className='back-btn' to="../vans">
+                <Link className='back-btn' to=".." relative='path'>
                     Back to all vans
                 </Link>
                 <div className='host-van-detail-container'>
