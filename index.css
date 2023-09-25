@@ -386,9 +386,9 @@ footer{
     font-size: 1.5em;
 }
 
-/* NOT FOUND */
-
-.not-found-page{
+/* ERRORS */
+.not-found-page,
+.error-page{
     display: flex;
     flex-direction: column;
     justify-content: center;

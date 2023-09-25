@@ -1,11 +1,16 @@
 import React from 'react'
-import {Link, useSearchParams} from 'react-router-dom'
+import {Link, useSearchParams, useLoaderData} from 'react-router-dom'
+import { getVans } from '../../api'
+
+export function loader(){
+    return getVans()
+}
 
 export default function Vans(){
-    const [vans, setVans] = React.useState([])
     const [searchParams, setSearchParams] = useSearchParams()
-
     const typeFilter = searchParams.getAll("type")
+
+    const vans = useLoaderData()
 
     function handleFilterChange(key, value){
         setSearchParams(prevParams => {
@@ -15,22 +20,16 @@ export default function Vans(){
                 if(prevParams.getAll(key).includes(value)){
                     prevParams.delete(key)
                 } else {
-                prevParams.set(key, value)
+                    prevParams.set(key, value)
                 }
             }
             return prevParams
         })
     }
-    
-    React.useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
-    }, [])
 
     const displayedVans = typeFilter.length > 0 ? vans.filter(van => typeFilter.includes(van.type) ? van : null ) : vans
 
-   const vanElements = displayedVans
+    const vanElements = displayedVans
         .map((van) => (
             <div className='van-tile' key={van.id}>
                 <Link to={`${van.id}`} state={{search: `${searchParams.toString()}`, type: typeFilter}}>
@@ -75,16 +74,9 @@ export default function Vans(){
                         Clear filters
                 </button>}
             </div>
-            {vans.length > 1 ? (
-                <div className='van-list'>
-                    {vanElements}
-                </div>
-            )
-            : (
-                <div className='loading-wrapper'>
-                    <h2 className='loading-text'>Loading...</h2>
-                </div>
-            )}
+            <div className='van-list'>
+                {vanElements}
+            </div>
         </section>
     )
 }
