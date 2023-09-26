@@ -124,7 +124,7 @@ header{
 nav{
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
 }
 
 nav a{
@@ -151,6 +151,10 @@ nav a:active{
     color: #000;
 }
 
+.login-icon{
+    width: 20px;
+}
+
 /*  FOOTER  */
 
 
@@ -163,6 +167,52 @@ footer{
     padding: 1rem;
     margin-top: auto;
     font-size: .75rem;
+}
+
+/* LOGIN PAGE */
+
+.login-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1em;
+}
+
+.login-page h1{
+    font-size: 1.75em;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form input{
+    padding: .5em;
+    border: 1px solid #D1D5DB;
+    width: 100%;
+}
+
+.email-input{
+    border-radius: 6px 6px 0px 0px;
+}
+
+.password-input{
+    border-radius: 0px 0px 6px 6px;
+}
+
+.login-btn{
+    width: 100%;
+    color: white;
+    padding: .5em;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1em;
 }
 
 /* Home Page */

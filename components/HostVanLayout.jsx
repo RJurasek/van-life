@@ -1,17 +1,15 @@
 import React from 'react'
-import { useParams, Link, NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet, useLoaderData } from 'react-router-dom'
+import { getHostVans } from '../api'
+
+export function loader({ params }){
+    return getHostVans(params.id)
+}
 
 export default function HostVanLayout(){
+    const data = useLoaderData()
+    const currentVan = data[0]
 
-    const params = useParams()
-
-    const [currentVan, setCurrentVan] = React.useState()
-
-    React.useEffect(() =>{
-        fetch(`/api/host/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setCurrentVan(data.vans[0]))
-    }, [])
 
     const activeStyles = {
         fontWeight: "bold",
